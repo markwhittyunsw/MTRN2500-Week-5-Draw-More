@@ -12,10 +12,9 @@
 //Global data Declaration
 
 Link L1(0.0,-100.0,200.0, PI/2, 40.0, 1.0, 0.0, 0.0);
-Link L2(0.0,-100.0,200.0, PI/4, 35.0, 1.0, 0.0, 0.0);
-Link L3(0.0,-100.0,200.0, 0, 30.0, 1.0, 0.0, 0.0);
-Link L4(0.0, -100.0, 200.0, -PI/4, 10.0, 1.0, 0.0, 0.0);
-Link L5(0.0, -100.0, 50.0, -PI/8, 5.0, 1.0, 0.0, 0.0);
+Link L2(0.0,-100.0,200.0, PI/4, 35.0, 1.0, 1.0, 0.0);
+Link L3(0.0,-100.0,200.0, 0, 30.0, 1.0, 0.0, 1.0);
+
 
 //OpenGL related functions 
 
@@ -48,12 +47,8 @@ void display (void)
 	L1.Draw();
 	L2.Move(L1.GetEnd().GetX(), L1.GetEnd().GetY(),L2.Getangle()+0.01); 
 	L2.Draw();
-	L3.Move(L2.GetEnd().GetX(), L2.GetEnd().GetY(),L3.Getangle()+0.001);
+	L3.Move(L2.GetEnd().GetX(), L2.GetEnd().GetY(),L2.Getangle()*3);
 	L3.Draw();
-	L4.Move(L3.GetEnd().GetX(), L3.GetEnd().GetY(), L3.Getangle());
-	L4.Draw();
-	L5.Move(L4.GetEnd().GetX(), L4.GetEnd().GetY(), L3.Getangle()*2);
-	L5.Draw();
 // End of Draw
 	glFlush();
 	glutSwapBuffers();
